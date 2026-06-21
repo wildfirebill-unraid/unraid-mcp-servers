@@ -4,7 +4,7 @@ services:
   # === CORE SERVICES ===
   filesystem-mcp:
     build: ./servers/filesystem-mcp
-    image: unraid-mcp/filesystem-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/filesystem-mcp:latest
     container_name: unraid-mcp-filesystem
     volumes:
       - /mnt:/data:ro
@@ -15,7 +15,7 @@ services:
 
   system-info-mcp:
     build: ./servers/system-info-mcp
-    image: unraid-mcp/system-info-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/system-info-mcp:latest
     container_name: unraid-mcp-system-info
     privileged: true
     pid: "host"
@@ -24,7 +24,7 @@ services:
 
   sqlite-mcp:
     build: ./servers/sqlite-mcp
-    image: unraid-mcp/sqlite-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/sqlite-mcp:latest
     container_name: unraid-mcp-sqlite
     volumes:
       - /mnt/user:/data
@@ -35,7 +35,7 @@ services:
 
   docker-mcp:
     build: ./servers/docker-mcp
-    image: unraid-mcp/docker-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/docker-mcp:latest
     container_name: unraid-mcp-docker
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -44,14 +44,14 @@ services:
 
   check-host-mcp:
     build: ./servers/check-host-mcp
-    image: unraid-mcp/check-host-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/check-host-mcp:latest
     container_name: unraid-mcp-check-host
     stdin_open: true
     tty: true
 
   text-utility-mcp:
     build: ./servers/text-utility-mcp
-    image: unraid-mcp/text-utility-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/text-utility-mcp:latest
     container_name: unraid-mcp-text-utility
     stdin_open: true
     tty: true
@@ -59,7 +59,7 @@ services:
   # === MEDIA ===
   media-info-mcp:
     build: ./servers/media-info-mcp
-    image: unraid-mcp/media-info-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/media-info-mcp:latest
     container_name: unraid-mcp-media-info
     volumes:
       - /mnt/user:/data
@@ -70,7 +70,7 @@ services:
 
   media-convert-mcp:
     build: ./servers/media-convert-mcp
-    image: unraid-mcp/media-convert-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/media-convert-mcp:latest
     container_name: unraid-mcp-media-convert
     volumes:
       - /mnt/user:/data
@@ -82,7 +82,7 @@ services:
   # === FILES & ARCHIVE ===
   archive-mcp:
     build: ./servers/archive-mcp
-    image: unraid-mcp/archive-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/archive-mcp:latest
     container_name: unraid-mcp-archive
     volumes:
       - /mnt/user:/data
@@ -93,7 +93,7 @@ services:
 
   backup-mcp:
     build: ./servers/backup-mcp
-    image: unraid-mcp/backup-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/backup-mcp:latest
     container_name: unraid-mcp-backup
     volumes:
       - /mnt/user:/data
@@ -106,7 +106,7 @@ services:
 
   finder-mcp:
     build: ./servers/finder-mcp
-    image: unraid-mcp/finder-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/finder-mcp:latest
     container_name: unraid-mcp-finder
     volumes:
       - /mnt/user:/data
@@ -117,7 +117,7 @@ services:
 
   diff-mcp:
     build: ./servers/diff-mcp
-    image: unraid-mcp/diff-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/diff-mcp:latest
     container_name: unraid-mcp-diff
     volumes:
       - /mnt/user:/data
@@ -127,7 +127,7 @@ services:
   # === SYSTEM ===
   process-mcp:
     build: ./servers/process-mcp
-    image: unraid-mcp/process-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/process-mcp:latest
     container_name: unraid-mcp-process
     privileged: true
     pid: "host"
@@ -136,7 +136,7 @@ services:
 
   log-mcp:
     build: ./servers/log-mcp
-    image: unraid-mcp/log-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/log-mcp:latest
     container_name: unraid-mcp-log
     volumes:
       - /var/log:/var/log:ro
@@ -148,7 +148,7 @@ services:
 
   service-mcp:
     build: ./servers/service-mcp
-    image: unraid-mcp/service-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/service-mcp:latest
     container_name: unraid-mcp-service
     privileged: true
     volumes:
@@ -159,21 +159,21 @@ services:
   # === DATA FORMATS ===
   yaml-mcp:
     build: ./servers/yaml-mcp
-    image: unraid-mcp/yaml-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/yaml-mcp:latest
     container_name: unraid-mcp-yaml
     stdin_open: true
     tty: true
 
   xml-mcp:
     build: ./servers/xml-mcp
-    image: unraid-mcp/xml-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/xml-mcp:latest
     container_name: unraid-mcp-xml
     stdin_open: true
     tty: true
 
   csv-mcp:
     build: ./servers/csv-mcp
-    image: unraid-mcp/csv-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/csv-mcp:latest
     container_name: unraid-mcp-csv
     volumes:
       - /mnt/user:/data
@@ -184,7 +184,7 @@ services:
 
   template-mcp:
     build: ./servers/template-mcp
-    image: unraid-mcp/template-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/template-mcp:latest
     container_name: unraid-mcp-template
     volumes:
       - /mnt/user:/data
@@ -196,7 +196,7 @@ services:
   # === MEDIA / IMAGE ===
   image-mcp:
     build: ./servers/image-mcp
-    image: unraid-mcp/image-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/image-mcp:latest
     container_name: unraid-mcp-image
     volumes:
       - /mnt/user:/data
@@ -207,7 +207,7 @@ services:
 
   encoding-mcp:
     build: ./servers/encoding-mcp
-    image: unraid-mcp/encoding-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/encoding-mcp:latest
     container_name: unraid-mcp-encoding
     volumes:
       - /mnt/user:/data
@@ -218,7 +218,7 @@ services:
 
   markdown-mcp:
     build: ./servers/markdown-mcp
-    image: unraid-mcp/markdown-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/markdown-mcp:latest
     container_name: unraid-mcp-markdown
     stdin_open: true
     tty: true
@@ -226,7 +226,7 @@ services:
   # === DEV TOOLS ===
   git-mcp:
     build: ./servers/git-mcp
-    image: unraid-mcp/git-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/git-mcp:latest
     container_name: unraid-mcp-git
     volumes:
       - /mnt/user:/data
@@ -237,7 +237,7 @@ services:
 
   ssl-mcp:
     build: ./servers/ssl-mcp
-    image: unraid-mcp/ssl-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/ssl-mcp:latest
     container_name: unraid-mcp-ssl
     volumes:
       - /mnt/user:/data
@@ -247,49 +247,49 @@ services:
   # === UTILITIES ===
   cron-mcp:
     build: ./servers/cron-mcp
-    image: unraid-mcp/cron-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/cron-mcp:latest
     container_name: unraid-mcp-cron
     stdin_open: true
     tty: true
 
   password-mcp:
     build: ./servers/password-mcp
-    image: unraid-mcp/password-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/password-mcp:latest
     container_name: unraid-mcp-password
     stdin_open: true
     tty: true
 
   uuid-mcp:
     build: ./servers/uuid-mcp
-    image: unraid-mcp/uuid-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/uuid-mcp:latest
     container_name: unraid-mcp-uuid
     stdin_open: true
     tty: true
 
   sort-mcp:
     build: ./servers/sort-mcp
-    image: unraid-mcp/sort-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/sort-mcp:latest
     container_name: unraid-mcp-sort
     stdin_open: true
     tty: true
 
   color-mcp:
     build: ./servers/color-mcp
-    image: unraid-mcp/color-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/color-mcp:latest
     container_name: unraid-mcp-color
     stdin_open: true
     tty: true
 
   ipcalc-mcp:
     build: ./servers/ipcalc-mcp
-    image: unraid-mcp/ipcalc-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/ipcalc-mcp:latest
     container_name: unraid-mcp-ipcalc
     stdin_open: true
     tty: true
 
   mempalace-mcp:
     build: ./servers/mempalace-mcp
-    image: unraid-mcp/mempalace-mcp:latest
+    image: ghcr.io/wildfirebill-unraid/unraid-mcp-servers/mempalace-mcp:latest
     container_name: unraid-mcp-mempalace
     volumes:
       - mempalace-data:/data

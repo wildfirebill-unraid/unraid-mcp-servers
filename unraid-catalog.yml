@@ -6,7 +6,7 @@ servers:
     description: "Read, write, search, and browse files on Unraid shares. Sandboxed to a configurable path."
     title: "Filesystem MCP"
     type: "server"
-    image: "unraid-mcp/filesystem-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/filesystem-mcp:latest"
     env:
       - name: "FILESYSTEM_ALLOWED_PATH"
         value: "{{filesystem-mcp.allowed_path}}"
@@ -27,7 +27,7 @@ servers:
     description: "Get system information: CPU, memory, disk usage, network stats, running processes, and uptime."
     title: "System Info MCP"
     type: "server"
-    image: "unraid-mcp/system-info-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/system-info-mcp:latest"
     env:
       - name: "FILESYSTEM_ALLOWED_PATH"
         value: "/tmp"
@@ -44,7 +44,7 @@ servers:
     description: "Query, create, and manage SQLite databases. Supports SELECT, INSERT, UPDATE, DELETE, DDL."
     title: "SQLite MCP"
     type: "server"
-    image: "unraid-mcp/sqlite-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/sqlite-mcp:latest"
     env:
       - name: "SQLITE_DB_DIR"
         value: "{{sqlite-mcp.db_dir}}"
@@ -65,7 +65,7 @@ servers:
     description: "List, inspect, start, stop, restart Docker containers and view logs. Also lists images with sizes."
     title: "Docker MCP"
     type: "server"
-    image: "unraid-mcp/docker-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/docker-mcp:latest"
     env:
       - name: "DOCKER_HOST"
         value: "unix:///var/run/docker.sock"
@@ -82,7 +82,7 @@ servers:
     description: "Network diagnostics: DNS lookup, ping, TCP port check, HTTP status check, reverse DNS, and WHOIS."
     title: "Check Host MCP"
     type: "server"
-    image: "unraid-mcp/check-host-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/check-host-mcp:latest"
     command:
       - "--transport=stdio"
     config:
@@ -96,7 +96,7 @@ servers:
     description: "Text processing tools: regex, JSON validate/format/minify, base64, hashing (md5/sha1/sha256/sha512), URL encode/decode, HTML encode/decode, word count, CSV to JSON."
     title: "Text Utility MCP"
     type: "server"
-    image: "unraid-mcp/text-utility-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/text-utility-mcp:latest"
     command:
       - "--transport=stdio"
     config:
@@ -111,7 +111,7 @@ servers:
     description: "Get media file metadata: codec, resolution, bitrate, duration, framerate, audio/subtitle streams using ffprobe."
     title: "Media Info MCP"
     type: "server"
-    image: "unraid-mcp/media-info-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/media-info-mcp:latest"
     env:
       - name: "MEDIA_INFO_PATH"
         value: "{{media-info-mcp.media_path}}"
@@ -132,7 +132,7 @@ servers:
     description: "Transcode video, extract audio, generate thumbnails, concatenate clips, and compress media using ffmpeg."
     title: "Media Convert MCP"
     type: "server"
-    image: "unraid-mcp/media-convert-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/media-convert-mcp:latest"
     env:
       - name: "MEDIA_CONVERT_PATH"
         value: "{{media-convert-mcp.media_path}}"
@@ -154,7 +154,7 @@ servers:
     description: "Create and extract archives (zip, tar.gz, tar.bz2, 7z), compress and decompress files."
     title: "Archive MCP"
     type: "server"
-    image: "unraid-mcp/archive-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/archive-mcp:latest"
     env:
       - name: "ARCHIVE_PATH"
         value: "{{archive-mcp.archive_path}}"
@@ -175,7 +175,7 @@ servers:
     description: "Rsync-based file backup, rotation, incremental copy, and backup statistics."
     title: "Backup MCP"
     type: "server"
-    image: "unraid-mcp/backup-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/backup-mcp:latest"
     env:
       - name: "BACKUP_SOURCE"
         value: "{{backup-mcp.source}}"
@@ -202,7 +202,7 @@ servers:
     description: "Advanced file search: by name glob, size range, modification age, file content, duplicates, and file type."
     title: "Finder MCP"
     type: "server"
-    image: "unraid-mcp/finder-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/finder-mcp:latest"
     env:
       - name: "FINDER_PATH"
         value: "{{finder-mcp.search_path}}"
@@ -223,7 +223,7 @@ servers:
     description: "Compare text strings, files, and directories with unified diff output. Apply patches."
     title: "Diff MCP"
     type: "server"
-    image: "unraid-mcp/diff-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/diff-mcp:latest"
     command:
       - "--transport=stdio"
     config:
@@ -238,7 +238,7 @@ servers:
     description: "List, find, and kill processes. View process trees and detailed stats for any PID."
     title: "Process MCP"
     type: "server"
-    image: "unraid-mcp/process-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/process-mcp:latest"
     command:
       - "--transport=stdio"
     config:
@@ -252,7 +252,7 @@ servers:
     description: "Tail, search, and analyze log files. Count log levels, watch for patterns, find log files."
     title: "Log MCP"
     type: "server"
-    image: "unraid-mcp/log-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/log-mcp:latest"
     env:
       - name: "LOG_PATH"
         value: "{{log-mcp.log_path}}"
@@ -273,7 +273,7 @@ servers:
     description: "Manage systemd services: list, status, start, stop, restart, enable, disable."
     title: "Service MCP"
     type: "server"
-    image: "unraid-mcp/service-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/service-mcp:latest"
     command:
       - "--transport=stdio"
     config:
@@ -288,7 +288,7 @@ servers:
     description: "Parse, validate, dump, and convert YAML to/from JSON. Merge multiple YAML files."
     title: "YAML MCP"
     type: "server"
-    image: "unraid-mcp/yaml-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/yaml-mcp:latest"
     command:
       - "--transport=stdio"
     config:
@@ -302,7 +302,7 @@ servers:
     description: "Parse, query with XPath, validate against XSD, and format XML documents."
     title: "XML MCP"
     type: "server"
-    image: "unraid-mcp/xml-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/xml-mcp:latest"
     command:
       - "--transport=stdio"
     config:
@@ -316,7 +316,7 @@ servers:
     description: "Query, filter, sort, merge, join, and aggregate CSV files with statistics."
     title: "CSV MCP"
     type: "server"
-    image: "unraid-mcp/csv-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/csv-mcp:latest"
     env:
       - name: "CSV_PATH"
         value: "{{csv-mcp.csv_path}}"
@@ -337,7 +337,7 @@ servers:
     description: "Render Jinja2 templates with variables, extract template variables, validate syntax."
     title: "Template MCP"
     type: "server"
-    image: "unraid-mcp/template-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/template-mcp:latest"
     env:
       - name: "TEMPLATE_PATH"
         value: "{{template-mcp.template_path}}"
@@ -359,7 +359,7 @@ servers:
     description: "Get image info, resize, convert format (jpeg/png/webp/gif), create thumbnails using Pillow."
     title: "Image MCP"
     type: "server"
-    image: "unraid-mcp/image-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/image-mcp:latest"
     env:
       - name: "IMAGE_PATH"
         value: "{{image-mcp.image_path}}"
@@ -380,7 +380,7 @@ servers:
     description: "Detect file encoding, convert between encodings, normalize unicode (NFC/NFD/NFKC/NFKD)."
     title: "Encoding MCP"
     type: "server"
-    image: "unraid-mcp/encoding-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/encoding-mcp:latest"
     env:
       - name: "ENCODING_PATH"
         value: "{{encoding-mcp.encoding_path}}"
@@ -401,7 +401,7 @@ servers:
     description: "Convert Markdown to HTML, strip to plain text, generate TOC, extract links and code blocks."
     title: "Markdown MCP"
     type: "server"
-    image: "unraid-mcp/markdown-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/markdown-mcp:latest"
     command:
       - "--transport=stdio"
     config:
@@ -416,7 +416,7 @@ servers:
     description: "Git repository operations: status, log, diff, branches, commit info, blame."
     title: "Git MCP"
     type: "server"
-    image: "unraid-mcp/git-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/git-mcp:latest"
     env:
       - name: "GIT_REPO_PATH"
         value: "{{git-mcp.repo_path}}"
@@ -437,7 +437,7 @@ servers:
     description: "SSL certificate info, expiry checking, certificate chain retrieval, CSR and self-signed cert generation."
     title: "SSL MCP"
     type: "server"
-    image: "unraid-mcp/ssl-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/ssl-mcp:latest"
     command:
       - "--transport=stdio"
     config:
@@ -452,7 +452,7 @@ servers:
     description: "Parse cron expressions, calculate next run times, validate cron syntax."
     title: "Cron MCP"
     type: "server"
-    image: "unraid-mcp/cron-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/cron-mcp:latest"
     command:
       - "--transport=stdio"
     config:
@@ -466,7 +466,7 @@ servers:
     description: "Generate secure passwords, analyze password strength with entropy and crack-time estimation, generate passphrases."
     title: "Password MCP"
     type: "server"
-    image: "unraid-mcp/password-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/password-mcp:latest"
     command:
       - "--transport=stdio"
     config:
@@ -480,7 +480,7 @@ servers:
     description: "Generate UUIDs (v4/v5/v7), validate, inspect version/variant, extract timestamps from time-based UUIDs."
     title: "UUID MCP"
     type: "server"
-    image: "unraid-mcp/uuid-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/uuid-mcp:latest"
     command:
       - "--transport=stdio"
     config:
@@ -494,7 +494,7 @@ servers:
     description: "Sort, shuffle, sample, filter, deduplicate lines, and split text into chunks."
     title: "Sort MCP"
     type: "server"
-    image: "unraid-mcp/sort-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/sort-mcp:latest"
     command:
       - "--transport=stdio"
     config:
@@ -508,7 +508,7 @@ servers:
     description: "Convert between hex/RGB/HSL, blend colors, calculate WCAG contrast ratio, generate color schemes, random palettes."
     title: "Color MCP"
     type: "server"
-    image: "unraid-mcp/color-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/color-mcp:latest"
     command:
       - "--transport=stdio"
     config:
@@ -522,7 +522,7 @@ servers:
     description: "Subnet calculations, CIDR containment, IP to/from integer conversion, CIDR merging and host listing."
     title: "IP Calc MCP"
     type: "server"
-    image: "unraid-mcp/ipcalc-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/ipcalc-mcp:latest"
     command:
       - "--transport=stdio"
     config:
@@ -536,7 +536,7 @@ servers:
     description: "Local-first AI memory palace. Mine projects and conversations into a searchable vector base with ChromaDB."
     title: "MemPalace MCP"
     type: "server"
-    image: "unraid-mcp/mempalace-mcp:latest"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/mempalace-mcp:latest"
     env:
       - name: "MEMPALACE_PALACE_PATH"
         value: "/data/palace"
