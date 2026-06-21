@@ -101,10 +101,10 @@ servers:
       - "--transport=stdio"
     config:
         - name: "text-utility-mcp"
-        description: "No configuration required"
-        type: "object"
-        properties: {}
-        required: []
+          description: "No configuration required"
+          type: "object"
+          properties: {}
+          required: []
 
   # === MEDIA ===
   media-info-mcp:
@@ -548,3 +548,1372 @@ servers:
         type: "object"
         properties: {}
         required: []
+
+  # === UTILITY / DATA FORMAT ===
+  ascii-table-mcp:
+    description: "Create ASCII tables from 2D arrays or lists of dicts."
+    title: "ASCII Table MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/ascii-table-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "ascii-table-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  barcode-mcp:
+    description: "Generate EAN-13 barcodes from 12-digit input."
+    title: "Barcode MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/barcode-mcp:latest"
+    env:
+      - name: "BARCODE_PATH"
+        value: "{{barcode-mcp.barcode_path}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "barcode-mcp"
+        description: "Barcode server configuration"
+        type: "object"
+        properties:
+          barcode_path:
+            type: "string"
+            description: "Root path for barcode images"
+            default: "/data"
+        required: []
+
+  basex-mcp:
+    description: "Convert values between number bases (2-62)."
+    title: "BaseX MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/basex-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "basex-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  bcp47-mcp:
+    description: "Validate BCP47 language tags."
+    title: "BCP47 MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/bcp47-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "bcp47-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  bytesize-mcp:
+    description: "Convert bytes to human-readable string format."
+    title: "Byte Size MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/bytesize-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "bytesize-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  cidr-mcp:
+    description: "Get detailed information about a CIDR subnet."
+    title: "CIDR MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/cidr-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "cidr-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  cipher-mcp:
+    description: "Caesar cipher encrypt/decrypt operations."
+    title: "Cipher MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/cipher-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "cipher-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  coordinate-mcp:
+    description: "Calculate distance between two coordinates."
+    title: "Coordinate MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/coordinate-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "coordinate-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  country-mcp:
+    description: "Get country details by alpha-2, alpha-3, or numeric code."
+    title: "Country MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/country-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "country-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  credit-card-mcp:
+    description: "Validate credit card numbers using the Luhn algorithm."
+    title: "Credit Card MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/credit-card-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "credit-card-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  currency-mcp:
+    description: "Get currency information by alphabetic code."
+    title: "Currency MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/currency-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "currency-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  dns-resolver-mcp:
+    description: "Resolve hostnames to IPv4/IPv6 addresses."
+    title: "DNS Resolver MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/dns-resolver-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "dns-resolver-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  emoji-mcp:
+    description: "Search emoji by name or alias."
+    title: "Emoji MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/emoji-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "emoji-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  fail2ban-mcp:
+    description: "Get detailed status of fail2ban jails."
+    title: "Fail2ban MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/fail2ban-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "fail2ban-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  firewall-mcp:
+    description: "List iptables rules for tables and chains."
+    title: "Firewall MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/firewall-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "firewall-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  hash-mcp:
+    description: "Hash text with md5/sha1/sha256/sha512/blake2b algorithms."
+    title: "Hash MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/hash-mcp:latest"
+    env:
+      - name: "HASH_PATH"
+        value: "{{hash-mcp.hash_path}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "hash-mcp"
+        description: "Hash server configuration"
+        type: "object"
+        properties:
+          hash_path:
+            type: "string"
+            description: "Root path for hash files"
+            default: "/data"
+        required: []
+
+  hexdump-mcp:
+    description: "Classic hex+ASCII dump of a file."
+    title: "Hexdump MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/hexdump-mcp:latest"
+    env:
+      - name: "HEXDUMP_PATH"
+        value: "{{hexdump-mcp.hexdump_path}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "hexdump-mcp"
+        description: "Hexdump server configuration"
+        type: "object"
+        properties:
+          hexdump_path:
+            type: "string"
+            description: "Root path for hex dump files"
+            default: "/data"
+        required: []
+
+  html-mcp:
+    description: "Parse HTML and return structure summary (tag count, nesting depth)."
+    title: "HTML MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/html-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "html-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  ini-mcp:
+    description: "Parse INI files and return all sections with keys and values."
+    title: "INI MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/ini-mcp:latest"
+    env:
+      - name: "INI_PATH"
+        value: "{{ini-mcp.ini_path}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "ini-mcp"
+        description: "INI server configuration"
+        type: "object"
+        properties:
+          ini_path:
+            type: "string"
+            description: "Root path for INI files"
+            default: "/data"
+        required: []
+
+  isbn-mcp:
+    description: "Validate ISBN-10 or ISBN-13 strings."
+    title: "ISBN MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/isbn-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "isbn-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  json-merge-patch-mcp:
+    description: "Apply RFC 7386 JSON Merge Patch to JSON documents."
+    title: "JSON Merge Patch MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/json-merge-patch-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "json-merge-patch-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  json-schema-mcp:
+    description: "Validate JSON instances against JSON Schemas."
+    title: "JSON Schema MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/json-schema-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "json-schema-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  jwt-mcp:
+    description: "Create and decode signed JWT tokens."
+    title: "JWT MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/jwt-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "jwt-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  language-detect-mcp:
+    description: "Detect the language of a text string."
+    title: "Language Detect MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/language-detect-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "language-detect-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  license-mcp:
+    description: "Look up licenses by SPDX identifier with permissions and conditions."
+    title: "License MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/license-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "license-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  lorem-mcp:
+    description: "Generate random lorem ipsum words."
+    title: "Lorem MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/lorem-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "lorem-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  mac-address-mcp:
+    description: "Validate if a string is a valid MAC address."
+    title: "MAC Address MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/mac-address-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "mac-address-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  math-eval-mcp:
+    description: "Evaluate mathematical expressions safely."
+    title: "Math Eval MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/math-eval-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "math-eval-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  mime-mcp:
+    description: "Detect MIME type of a file by extension."
+    title: "MIME MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/mime-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "mime-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  nmap-lite-mcp:
+    description: "Scan hosts with custom ports and arguments."
+    title: "Nmap Lite MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/nmap-lite-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "nmap-lite-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  otp-mcp:
+    description: "Generate current TOTP codes (2FA)."
+    title: "OTP MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/otp-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "otp-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  phone-number-mcp:
+    description: "Parse phone numbers into their components."
+    title: "Phone Number MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/phone-number-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "phone-number-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  port-scanner-mcp:
+    description: "Scan a single TCP port on a host."
+    title: "Port Scanner MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/port-scanner-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "port-scanner-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  postcode-mcp:
+    description: "Validate postcodes against country-specific formats."
+    title: "Postcode MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/postcode-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "postcode-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  properties-mcp:
+    description: "Parse .properties files and return all key-value pairs."
+    title: "Properties MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/properties-mcp:latest"
+    env:
+      - name: "PROPERTIES_PATH"
+        value: "{{properties-mcp.properties_path}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "properties-mcp"
+        description: "Properties server configuration"
+        type: "object"
+        properties:
+          properties_path:
+            type: "string"
+            description: "Root path for .properties files"
+            default: "/data"
+        required: []
+
+  qrcode-mcp:
+    description: "Generate QR code PNG images from text input."
+    title: "QR Code MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/qrcode-mcp:latest"
+    env:
+      - name: "QRCODE_PATH"
+        value: "{{qrcode-mcp.qrcode_path}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "qrcode-mcp"
+        description: "QR Code server configuration"
+        type: "object"
+        properties:
+          qrcode_path:
+            type: "string"
+            description: "Root path for QR code images"
+            default: "/data"
+        required: []
+
+  roman-numeral-mcp:
+    description: "Convert integers to Roman numerals."
+    title: "Roman Numeral MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/roman-numeral-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "roman-numeral-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  rss-mcp:
+    description: "Fetch and parse RSS/Atom feed URLs."
+    title: "RSS MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/rss-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "rss-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  schedule-mcp:
+    description: "Parse cron expressions into field-level details."
+    title: "Schedule MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/schedule-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "schedule-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  semver-mcp:
+    description: "Parse semver strings into their components."
+    title: "SemVer MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/semver-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "semver-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  sitemap-mcp:
+    description: "Parse sitemap XML files or URLs into structured entries."
+    title: "Sitemap MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/sitemap-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "sitemap-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  slugify-mcp:
+    description: "Convert text to URL-safe slugs."
+    title: "Slugify MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/slugify-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "slugify-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  stats-mcp:
+    description: "Descriptive statistics for lists of values (mean, median, stdev, etc.)."
+    title: "Stats MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/stats-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "stats-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  temp-dir-mcp:
+    description: "Create temporary directories in a sandboxed path."
+    title: "Temp Dir MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/temp-dir-mcp:latest"
+    env:
+      - name: "TEMP_BASE_PATH"
+        value: "{{temp-dir-mcp.temp_path}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "temp-dir-mcp"
+        description: "Temp directory server configuration"
+        type: "object"
+        properties:
+          temp_path:
+            type: "string"
+            description: "Root path for temp files"
+            default: "/data"
+        required: []
+
+  toml-mcp:
+    description: "Parse TOML files and return contents as JSON."
+    title: "TOML MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/toml-mcp:latest"
+    env:
+      - name: "TOML_PATH"
+        value: "{{toml-mcp.toml_path}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "toml-mcp"
+        description: "TOML server configuration"
+        type: "object"
+        properties:
+          toml_path:
+            type: "string"
+            description: "Root path for TOML files"
+            default: "/data"
+        required: []
+
+  traceroute-mcp:
+    description: "Perform ICMP traceroute to a host."
+    title: "Traceroute MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/traceroute-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "traceroute-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  tree-mcp:
+    description: "Show directory tree as ASCII."
+    title: "Tree MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/tree-mcp:latest"
+    env:
+      - name: "TREE_PATH"
+        value: "{{tree-mcp.tree_path}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "tree-mcp"
+        description: "Tree server configuration"
+        type: "object"
+        properties:
+          tree_path:
+            type: "string"
+            description: "Root path for directory trees"
+            default: "/data"
+        required: []
+
+  unit-convert-mcp:
+    description: "Convert values between measurement units."
+    title: "Unit Convert MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/unit-convert-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "unit-convert-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  users-groups-mcp:
+    description: "List all system users from /etc/passwd."
+    title: "Users & Groups MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/users-groups-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "users-groups-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  vin-mcp:
+    description: "Validate VIN numbers (17 chars, check digit verification)."
+    title: "VIN MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/vin-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "vin-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  webhook-mcp:
+    description: "Send webhooks with custom methods (POST/GET/PUT)."
+    title: "Webhook MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/webhook-mcp:latest"
+    env:
+      - name: "WEBHOOK_TIMEOUT"
+        value: "{{webhook-mcp.webhook_timeout}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "webhook-mcp"
+        description: "Webhook server configuration"
+        type: "object"
+        properties:
+          webhook_timeout:
+            type: "string"
+            description: "Default webhook timeout in seconds"
+            default: "30"
+        required: []
+
+  wireguard-mcp:
+    description: "Show status of WireGuard interfaces."
+    title: "WireGuard MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/wireguard-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "wireguard-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  zfs-mcp:
+    description: "List and manage ZFS pools and datasets."
+    title: "ZFS MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/zfs-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "zfs-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  # === DATABASES ===
+  elasticsearch-mcp:
+    description: "Check Elasticsearch cluster health status."
+    title: "Elasticsearch MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/elasticsearch-mcp:latest"
+    env:
+      - name: "ES_HOST"
+        value: "{{elasticsearch-mcp.es_host}}"
+      - name: "ES_PORT"
+        value: "{{elasticsearch-mcp.es_port}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "elasticsearch-mcp"
+        description: "Elasticsearch server configuration"
+        type: "object"
+        properties:
+          es_host:
+            type: "string"
+            description: "Elasticsearch host"
+            default: "localhost"
+          es_port:
+            type: "string"
+            description: "Elasticsearch port"
+            default: "9200"
+        required: []
+
+  influxdb-mcp:
+    description: "List InfluxDB buckets and query data."
+    title: "InfluxDB MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/influxdb-mcp:latest"
+    env:
+      - name: "INFLUXDB_URL"
+        value: "{{influxdb-mcp.influxdb_url}}"
+      - name: "INFLUXDB_TOKEN"
+        value: "{{influxdb-mcp.influxdb_token}}"
+      - name: "INFLUXDB_ORG"
+        value: "{{influxdb-mcp.influxdb_org}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "influxdb-mcp"
+        description: "InfluxDB server configuration"
+        type: "object"
+        properties:
+          influxdb_url:
+            type: "string"
+            description: "InfluxDB URL"
+            default: "http://localhost:8086"
+          influxdb_token:
+            type: "string"
+            description: "InfluxDB authentication token"
+            default: ""
+          influxdb_org:
+            type: "string"
+            description: "InfluxDB organization"
+            default: "myorg"
+        required: []
+
+  memcached-mcp:
+    description: "Get and set values in Memcached by key."
+    title: "Memcached MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/memcached-mcp:latest"
+    env:
+      - name: "MEMCACHED_HOST"
+        value: "{{memcached-mcp.memcached_host}}"
+      - name: "MEMCACHED_PORT"
+        value: "{{memcached-mcp.memcached_port}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "memcached-mcp"
+        description: "Memcached server configuration"
+        type: "object"
+        properties:
+          memcached_host:
+            type: "string"
+            description: "Memcached host"
+            default: "localhost"
+          memcached_port:
+            type: "string"
+            description: "Memcached port"
+            default: "11211"
+        required: []
+
+  mongodb-mcp:
+    description: "List MongoDB databases and query collections."
+    title: "MongoDB MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/mongodb-mcp:latest"
+    env:
+      - name: "MONGODB_URI"
+        value: "{{mongodb-mcp.mongodb_uri}}"
+      - name: "MONGODB_DATABASE"
+        value: "{{mongodb-mcp.mongodb_database}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "mongodb-mcp"
+        description: "MongoDB server configuration"
+        type: "object"
+        properties:
+          mongodb_uri:
+            type: "string"
+            description: "MongoDB connection URI"
+            default: "mongodb://localhost:27017"
+          mongodb_database:
+            type: "string"
+            description: "Default MongoDB database"
+            default: "mydb"
+        required: []
+
+  mysql-mcp:
+    description: "List MySQL databases and query tables."
+    title: "MySQL MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/mysql-mcp:latest"
+    env:
+      - name: "MYSQL_HOST"
+        value: "{{mysql-mcp.mysql_host}}"
+      - name: "MYSQL_PORT"
+        value: "{{mysql-mcp.mysql_port}}"
+      - name: "MYSQL_USER"
+        value: "{{mysql-mcp.mysql_user}}"
+      - name: "MYSQL_PASSWORD"
+        value: "{{mysql-mcp.mysql_password}}"
+      - name: "MYSQL_DATABASE"
+        value: "{{mysql-mcp.mysql_database}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "mysql-mcp"
+        description: "MySQL server configuration"
+        type: "object"
+        properties:
+          mysql_host:
+            type: "string"
+            description: "MySQL host"
+            default: "localhost"
+          mysql_port:
+            type: "string"
+            description: "MySQL port"
+            default: "3306"
+          mysql_user:
+            type: "string"
+            description: "MySQL user"
+            default: "root"
+          mysql_password:
+            type: "string"
+            description: "MySQL password"
+            default: ""
+          mysql_database:
+            type: "string"
+            description: "Default MySQL database"
+            default: "mydb"
+        required: []
+
+  postgresql-mcp:
+    description: "List PostgreSQL databases and query tables."
+    title: "PostgreSQL MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/postgresql-mcp:latest"
+    env:
+      - name: "PGHOST"
+        value: "{{postgresql-mcp.pghost}}"
+      - name: "PGPORT"
+        value: "{{postgresql-mcp.pgport}}"
+      - name: "PGUSER"
+        value: "{{postgresql-mcp.pguser}}"
+      - name: "PGPASSWORD"
+        value: "{{postgresql-mcp.pgpassword}}"
+      - name: "PGDATABASE"
+        value: "{{postgresql-mcp.pgdatabase}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "postgresql-mcp"
+        description: "PostgreSQL server configuration"
+        type: "object"
+        properties:
+          pghost:
+            type: "string"
+            description: "PostgreSQL host"
+            default: "localhost"
+          pgport:
+            type: "string"
+            description: "PostgreSQL port"
+            default: "5432"
+          pguser:
+            type: "string"
+            description: "PostgreSQL user"
+            default: "postgres"
+          pgpassword:
+            type: "string"
+            description: "PostgreSQL password"
+            default: ""
+          pgdatabase:
+            type: "string"
+            description: "Default PostgreSQL database"
+            default: "mydb"
+        required: []
+
+  redis-mcp:
+    description: "Get and set Redis string values by key."
+    title: "Redis MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/redis-mcp:latest"
+    env:
+      - name: "REDIS_HOST"
+        value: "{{redis-mcp.redis_host}}"
+      - name: "REDIS_PORT"
+        value: "{{redis-mcp.redis_port}}"
+      - name: "REDIS_PASSWORD"
+        value: "{{redis-mcp.redis_password}}"
+      - name: "REDIS_DB"
+        value: "{{redis-mcp.redis_db}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "redis-mcp"
+        description: "Redis server configuration"
+        type: "object"
+        properties:
+          redis_host:
+            type: "string"
+            description: "Redis host"
+            default: "localhost"
+          redis_port:
+            type: "string"
+            description: "Redis port"
+            default: "6379"
+          redis_password:
+            type: "string"
+            description: "Redis password"
+            default: ""
+          redis_db:
+            type: "string"
+            description: "Redis database number"
+            default: "0"
+        required: []
+
+  # === NETWORK / SYSTEM ===
+  net-connections-mcp:
+    description: "List active network connections."
+    title: "Network Connections MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/net-connections-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "net-connections-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  nfs-mcp:
+    description: "List NFS exports from /etc/exports."
+    title: "NFS MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/nfs-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "nfs-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  packages-mcp:
+    description: "List installed packages, optionally filtered."
+    title: "Packages MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/packages-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "packages-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  samba-mcp:
+    description: "List Samba shares from smbstatus or smb.conf."
+    title: "Samba MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/samba-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "samba-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  journald-mcp:
+    description: "Query the systemd journal with filters."
+    title: "Journald MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/journald-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "journald-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  kernel-mcp:
+    description: "Get kernel version, release, architecture, and hostname."
+    title: "Kernel MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/kernel-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "kernel-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  lvm-mcp:
+    description: "List LVM physical volumes and volume groups."
+    title: "LVM MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/lvm-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "lvm-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  mdadm-mcp:
+    description: "List MD RAID arrays from /proc/mdstat."
+    title: "MDADM MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/mdadm-mcp:latest"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "mdadm-mcp"
+        description: "No configuration required"
+        type: "object"
+        properties: {}
+        required: []
+
+  # === MEDIA / DOCUMENTS ===
+  epub-mcp:
+    description: "Read EPUB metadata (title, author, publisher, language)."
+    title: "EPUB MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/epub-mcp:latest"
+    env:
+      - name: "EPUB_PATH"
+        value: "{{epub-mcp.epub_path}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "epub-mcp"
+        description: "EPUB server configuration"
+        type: "object"
+        properties:
+          epub_path:
+            type: "string"
+            description: "Root path for EPUB files"
+            default: "/data"
+        required: []
+
+  excel-mcp:
+    description: "Read Excel spreadsheet data from sheets."
+    title: "Excel MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/excel-mcp:latest"
+    env:
+      - name: "EXCEL_PATH"
+        value: "{{excel-mcp.excel_path}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "excel-mcp"
+        description: "Excel server configuration"
+        type: "object"
+        properties:
+          excel_path:
+            type: "string"
+            description: "Root path for Excel files"
+            default: "/data"
+        required: []
+
+  pdf-mcp:
+    description: "Extract all text from PDF files."
+    title: "PDF MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/pdf-mcp:latest"
+    env:
+      - name: "PDF_PATH"
+        value: "{{pdf-mcp.pdf_path}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "pdf-mcp"
+        description: "PDF server configuration"
+        type: "object"
+        properties:
+          pdf_path:
+            type: "string"
+            description: "Root path for PDF files"
+            default: "/data"
+        required: []
+
+  envfile-mcp:
+    description: "Parse .env files and return all key-value pairs."
+    title: "Envfile MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/envfile-mcp:latest"
+    env:
+      - name: "ENVFILE_PATH"
+        value: "{{envfile-mcp.envfile_path}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "envfile-mcp"
+        description: "Envfile server configuration"
+        type: "object"
+        properties:
+          envfile_path:
+            type: "string"
+            description: "Root path for .env files"
+            default: "/data"
+        required: []
+
+  # === EMAIL ===
+  email-mcp:
+    description: "Send plain text emails via SMTP."
+    title: "Email MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/email-mcp:latest"
+    env:
+      - name: "SMTP_HOST"
+        value: "{{email-mcp.smtp_host}}"
+      - name: "SMTP_PORT"
+        value: "{{email-mcp.smtp_port}}"
+      - name: "SMTP_USER"
+        value: "{{email-mcp.smtp_user}}"
+      - name: "SMTP_PASSWORD"
+        value: "{{email-mcp.smtp_password}}"
+      - name: "SMTP_USE_TLS"
+        value: "{{email-mcp.smtp_use_tls}}"
+      - name: "SMTP_FROM"
+        value: "{{email-mcp.smtp_from}}"
+      - name: "EMAIL_PATH"
+        value: "{{email-mcp.email_path}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "email-mcp"
+        description: "Email server configuration"
+        type: "object"
+        properties:
+          smtp_host:
+            type: "string"
+            description: "SMTP server host"
+            default: "smtp.example.com"
+          smtp_port:
+            type: "string"
+            description: "SMTP server port"
+            default: "587"
+          smtp_user:
+            type: "string"
+            description: "SMTP username"
+            default: ""
+          smtp_password:
+            type: "string"
+            description: "SMTP password"
+            default: ""
+          smtp_use_tls:
+            type: "string"
+            description: "Enable TLS (true/false)"
+            default: "true"
+          smtp_from:
+            type: "string"
+            description: "Default from address"
+            default: "noreply@example.com"
+          email_path:
+            type: "string"
+            description: "Root path for email files"
+            default: "/data"
+        required: []
+
+  # === GEO ===
+  geo-ip-mcp:
+    description: "Look up geolocation data for IP addresses using MaxMind GeoLite2 databases."
+    title: "Geo IP MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/geo-ip-mcp:latest"
+    env:
+      - name: "GEOIP_DB_PATH"
+        value: "{{geo-ip-mcp.geoip_db_path}}"
+      - name: "GEOIP_ASN_DB_PATH"
+        value: "{{geo-ip-mcp.geoip_asn_db_path}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "geo-ip-mcp"
+        description: "Geo IP server configuration"
+        type: "object"
+        properties:
+          geoip_db_path:
+            type: "string"
+            description: "Path to GeoLite2 City database"
+            default: "/data/geoip"
+          geoip_asn_db_path:
+            type: "string"
+            description: "Path to GeoLite2 ASN database"
+            default: "/data/geoip"
+        required: []
+
+  github-mcp:
+    description: "GitHub API integration — search repos, manage issues/PRs, read/write files, manage branches and releases."
+    title: "GitHub MCP"
+    type: "server"
+    image: "ghcr.io/wildfirebill-unraid/unraid-mcp-servers/github-mcp:latest"
+    env:
+      - name: "GITHUB_TOKEN"
+        value: "{{github-mcp.github_token}}"
+      - name: "GITHUB_API_URL"
+        value: "{{github-mcp.github_api_url}}"
+    command:
+      - "--transport=stdio"
+    config:
+      - name: "github-mcp"
+        description: "GitHub server configuration"
+        type: "object"
+        properties:
+          github_token:
+            type: "string"
+            description: "GitHub personal access token (classic or fine-grained with repo/org scopes)"
+            secret: true
+          github_api_url:
+            type: "string"
+            description: "GitHub API base URL (change for GitHub Enterprise)"
+            default: "https://api.github.com"
+        required:
+          - "github_token"

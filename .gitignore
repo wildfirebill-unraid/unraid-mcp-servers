@@ -5,3 +5,10 @@ __pycache__/
 .venv/
 venv/
 dist/
+
+# One-time scaffolding generators (stale — servers are now manually maintained)
+generate-*.py
+generate-*.ps1
+
+# Generated build script (stale — only lists 31 of 106 servers)
+build-all.ps1
