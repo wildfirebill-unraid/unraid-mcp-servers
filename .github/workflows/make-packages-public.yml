@@ -19,7 +19,7 @@ jobs:
 
       - name: Make all container packages public
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GHCR_PAT || secrets.GITHUB_TOKEN }}
         run: |
           OWNER="${{ inputs.ghcr_owner }}"
           # Try org endpoint first, fall back to user endpoint

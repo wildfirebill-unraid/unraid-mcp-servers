@@ -1,0 +1,70 @@
+name: Cleanup Orphaned GHCR Packages
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [Build All MCP Servers]
+    types:
+      - completed
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: List servers
+        id: list
+        run: |
+          dirs=$(ls -d servers/*/ | sed 's|servers/||;s|/||' | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          echo "servers=$dirs" >> $GITHUB_OUTPUT
+
+      - name: Delete orphaned packages
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GHCR_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          for server in $(echo '${{ steps.list.outputs.servers }}' | jq -r '.[]'); do
+            echo "--- $server ---"
+            pkg_name="ghcr.io%2F$(echo '${{ github.repository }}' | sed 's|/|%2F|g')%2F${server}"
+
+            out=$(gh api --method DELETE "/orgs/${{ github.repository_owner }}/packages/container/${pkg_name}" 2>&1) && {
+              echo "  Deleted via REST API"
+              continue
+            }
+
+            if echo "$out" | grep -q "404\|not found"; then
+              echo "  Orphaned, trying OCI delete..."
+              ghcr_token=$(curl -s \
+                "https://ghcr.io/token?service=ghcr.io&scope=repository:${{ github.repository }}/${server}:delete,pull,push" \
+                -H "Authorization: Bearer $GH_TOKEN" | jq -r '.token // empty')
+              if [ -z "$ghcr_token" ]; then
+                echo "  Cannot get token (need GHCR_PAT with write:packages)"
+                continue
+              fi
+              digest=$(curl -s -I \
+                -H "Authorization: Bearer $ghcr_token" \
+                "https://ghcr.io/v2/${{ github.repository }}/${server}/manifests/latest" \
+                -o /dev/null -w '%header{Docker-Content-Digest}') 2>/dev/null || true
+              if [ -z "$digest" ]; then
+                echo "  No manifest (clean)"
+                continue
+              fi
+              code=$(curl -s -o /dev/null -w '%{http_code}' -X DELETE \
+                -H "Authorization: Bearer $ghcr_token" \
+                "https://ghcr.io/v2/${{ github.repository }}/${server}/manifests/${digest}")
+              echo "  OCI delete: HTTP $code"
+            else
+              echo "  Error: $out"
+            fi
+          done
+
+      - name: Summary
+        run: echo "Cleanup done. Run Build workflow next."
